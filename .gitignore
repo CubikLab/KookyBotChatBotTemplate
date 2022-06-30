@@ -1,3 +1,9 @@
+# Test Configuration:
+/conf
+
+# Generate when building/running
+/src/main/resources/version.properties
+
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
