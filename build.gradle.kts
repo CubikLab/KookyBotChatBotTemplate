@@ -108,6 +108,7 @@ dependencies {
     implementation("io.ktor:ktor-serialization-gson-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-html-builder-jvm:$ktor_version")
+    implementation("io.ktor:ktor-client-core-jvm:$ktor_version")
     // Logback
     implementation("ch.qos.logback:logback-classic:$logback_version")
 
