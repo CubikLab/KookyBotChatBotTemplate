@@ -1,2 +1,6 @@
 # Languages: e.g. en, zh_CN
 language: "en"
+
+ktor:
+  host: "127.0.0.1"
+  port: 8080
