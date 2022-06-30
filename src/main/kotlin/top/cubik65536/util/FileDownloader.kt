@@ -6,7 +6,7 @@ import io.ktor.client.plugins.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import kotlinx.coroutines.runBlocking
-import tech.ixor.I18N
+import top.cubik65536.I18N
 import java.io.File
 
 class FileDownloader {
