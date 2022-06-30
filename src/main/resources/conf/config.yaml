@@ -4,3 +4,6 @@ language: "en"
 ktor:
   host: "127.0.0.1"
   port: 8080
+
+kook:
+  token: "your_kook_token"

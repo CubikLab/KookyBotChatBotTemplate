@@ -7,10 +7,12 @@ import top.cubik65536.I18N
 import tech.ixor.utils.FileDownloader
 
 class ConfigEntity {
+    data class Kook(val token: String)
+
     data class Ktor(val host: String, val port: Int)
 
     data class Config(
-        val language: String, val ktor: Ktor
+        val language: String, val ktor: Ktor, val kook: Kook
     )
 
     fun loadConfig(): Config {
