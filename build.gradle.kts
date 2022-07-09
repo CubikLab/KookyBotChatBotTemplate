@@ -6,6 +6,7 @@ import java.util.Properties
 val i18n4k_version: String by project
 val klaxon_version: String by project
 val hoplite_version: String by project
+val kookybot_version: String by project
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
@@ -91,6 +92,7 @@ application {
 repositories {
     mavenCentral()
     maven { url = uri("https://maven.pkg.jetbrains.space/public/p/ktor/eap") }
+    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
@@ -102,6 +104,8 @@ dependencies {
     // Config Loader
     implementation("com.sksamuel.hoplite:hoplite-core:$hoplite_version")
     implementation("com.sksamuel.hoplite:hoplite-yaml:$hoplite_version")
+    // KOOK SDK
+    implementation("com.github.KookyBot:KookyBot:$kookybot_version")
 
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktor_version")
