@@ -10,8 +10,6 @@ import top.cubik65536.util.VersionUtil
 
 fun Route.index() {
     get("/") {
-        val version = VersionUtil.getVersion()
-
         call.respondHtml(HttpStatusCode.OK) {
             head {
                 title { +"${I18N.welcome}" }
@@ -30,11 +28,12 @@ fun Route.index() {
 
                             p {
                                 b { +"${I18N.version} " }
-                                +version
+                                +VersionUtil.getVersion()
                             }
-                            if (version.contains("dev") || version.contains("alpha") || version.contains("beta")) {
+                            val stage = VersionUtil.getStageProperty()
+                            if (stage.contains("dev") || stage.contains("alpha") || stage.contains("beta")) {
                                 p { b { +"${I18N.experimental}" } }
-                            } else if (version.contains("rc")) {
+                            } else if (stage.contains("rc")) {
                                 p { b { +"${I18N.releaseCandidate}" } }
                             }
 
