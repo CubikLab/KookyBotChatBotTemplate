@@ -6,6 +6,7 @@ import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import top.cubik65536.entity.ConfigEntity
 import top.cubik65536.plugins.*
+import top.cubik65536.util.VersionUtil
 import java.util.*
 
 fun main() {
@@ -17,6 +18,15 @@ fun main() {
 
     println("${I18N.starting}\n")
     println("${I18N.selectedLanguage} ${I18N.language}")
+
+    val version = VersionUtil.getVersion()
+    println("${I18N.version} $version")
+    if (version.contains("dev") || version.contains("alpha") || version.contains("beta")) {
+        println("${I18N.experimental}")
+    } else if (version.contains("rc")) {
+        println("${I18N.releaseCandidate}")
+    }
+    println()
 
     embeddedServer(Netty, port = config.ktor.port, host = config.ktor.host) {
         configureRouting()
