@@ -92,6 +92,7 @@ application {
 repositories {
     mavenCentral()
     maven { url = uri("https://maven.pkg.jetbrains.space/public/p/ktor/eap") }
+    maven { url = uri("https://libraries.minecraft.net") }
     maven { url = uri("https://jitpack.io") }
 }
 
@@ -116,6 +117,7 @@ dependencies {
     implementation("io.ktor:ktor-client-cio-jvm:$ktor_version")
     // Logback
     implementation("ch.qos.logback:logback-classic:$logback_version")
+    implementation("org.slf4j:slf4j-simple:1.7.11")
 
     // Test Dependencies
     // Ktor
