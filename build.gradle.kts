@@ -9,7 +9,7 @@ val hoplite_version: String by project
 val kookybot_version: String by project
 val ktor_version: String by project
 val kotlin_version: String by project
-val logback_version: String by project
+val slf4j_version: String by project
 
 val versionPropertiesFile = "${projectDir}/project.properties"
 
@@ -115,9 +115,8 @@ dependencies {
     implementation("io.ktor:ktor-server-html-builder-jvm:$ktor_version")
     implementation("io.ktor:ktor-client-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-client-cio-jvm:$ktor_version")
-    // Logback
-    implementation("ch.qos.logback:logback-classic:$logback_version")
-    implementation("org.slf4j:slf4j-simple:1.7.11")
+    // Logging Framework
+    implementation("org.slf4j:slf4j-simple:$slf4j_version")
 
     // Test Dependencies
     // Ktor
