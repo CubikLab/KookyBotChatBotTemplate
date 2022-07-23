@@ -106,7 +106,7 @@ dependencies {
     implementation("com.sksamuel.hoplite:hoplite-yaml:$hoplite_version")
     // KOOK SDK
     implementation("com.github.KookyBot:KookyBot:$kookybot_version")
-
+    // Ktor
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktor_version")
     implementation("io.ktor:ktor-serialization-gson-jvm:$ktor_version")
