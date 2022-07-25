@@ -8,6 +8,7 @@ import io.ktor.server.netty.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import top.cubik65536.controller.StatusController
 import top.cubik65536.entity.ConfigEntity
 import top.cubik65536.plugins.configureRouting
 import top.cubik65536.plugins.configureSerialization
@@ -40,6 +41,7 @@ fun main() {
     }
     CoroutineScope(Dispatchers.Default).launch {
         val self = kookClient.start()
+        kookClient.eventManager.addClassListener(StatusController())
     }
 
     embeddedServer(Netty, port = config.ktor.port, host = config.ktor.host) {
