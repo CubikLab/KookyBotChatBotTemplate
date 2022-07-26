@@ -12,22 +12,13 @@ class VersionUtil {
             return properties
         }
 
-        fun getVersionProperty(): String {
-            return getVersionProperties().getProperty("version")
-        }
-
-        fun getStageProperty(): String {
-            return getVersionProperties().getProperty("stage")
-        }
-
-        fun getRevisionProperty(): String {
-            return getVersionProperties().getProperty("revision")
+        fun getProperty(key: String): String {
+            return getVersionProperties().getProperty(key)
         }
 
         fun getVersion(): String {
-            val versionProperty = getVersionProperty()
-            var stageProperty = getStageProperty()
-            val revisionProperty = getRevisionProperty().uppercase()
+            var versionProperty = getProperty("version")
+            var stageProperty = getProperty("stage")
             stageProperty = stageProperty.replace(regex = Regex("dev"), replacement = "DEV")
             stageProperty = stageProperty.replace(regex = Regex("alpha\\."), replacement = "Alpha ")
             stageProperty = stageProperty.replace(regex = Regex("alpha"), replacement = "Alpha")
@@ -35,6 +26,8 @@ class VersionUtil {
             stageProperty = stageProperty.replace(regex = Regex("beta"), replacement = "Beta")
             stageProperty = stageProperty.replace(regex = Regex("rc\\."), replacement = "Release Candidate ")
             stageProperty = stageProperty.replace(regex = Regex("rc"), replacement = "Release Candidate")
+            var revisionProperty = getProperty("revision")
+            revisionProperty = revisionProperty.uppercase()
             return "$versionProperty $stageProperty ($revisionProperty)"
         }
     }

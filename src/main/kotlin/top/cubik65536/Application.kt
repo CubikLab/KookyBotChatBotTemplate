@@ -27,7 +27,7 @@ fun main() {
     println("${I18N.selectedLanguage} ${I18N.language}")
 
     println("${I18N.version} ${VersionUtil.getVersion()}")
-    val stage = VersionUtil.getStageProperty()
+    val stage = VersionUtil.getProperty("stage")
     if (stage.contains("dev") || stage.contains("alpha") || stage.contains("beta")) {
         println("${I18N.experimental}")
     } else if (stage.contains("rc")) {
